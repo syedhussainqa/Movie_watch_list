@@ -7,6 +7,7 @@ import ActorList from "../Page_Stuff/ActorList/ActorList";
 import MovieInfoSection from "../Page_Stuff/MovieInfoSection/MovieInfoSection";
 import BtnWatchList from "../Page_Stuff/BtnWatchList/BtnWatchList";
 import ShowMoviePath from "../Page_Stuff/ShowMoviePath/ShowMoviePath";
+import MovieList from "../MovieList/MovieList";
 import YoutubeTrailer from "../Page_Stuff/YoutubeTrailer/YoutubeTrailer";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -28,7 +29,11 @@ class Movie extends Component {
     imdbRating: null,
     movieImgPath: null,
     runTime: null,
+    releaseDate: null,
+    
   };
+
+
 
   // Movie path - https://api.themoviedb.org/3/movie/447404/?api_key=682698077ad9dac12b017ef2e6c87ed4
   // Credits Path - https://api.themoviedb.org/3/movie/447404/credits?api_key=682698077ad9dac12b017ef2e6c87ed4
@@ -59,7 +64,8 @@ class Movie extends Component {
           title: data.original_title,
           imdbRating: data.vote_average,
           movieImgPath: data.backdrop_path,
-          runTime: data.runtime
+          runTime: data.runtime,
+          releaseDate: data.release_date
         });
       });
   };
@@ -106,18 +112,26 @@ class Movie extends Component {
         <MovieInfoSection
           runTime={this.state.runTime}
           imdb_rating={this.state.imdbRating}
+          releaseDate={this.state.releaseDate}
         />
+
         
-        <div className="moviethumb">
-        <AliceCarousel>
-        {this.state.actorsData.slice(0,11).map((actor, index) => {
+        <div className="movie-grid">
+        <AliceCarousel mouseDragEnabled fadeOutAnimation >
+        {/* <Grid> */}
+        {this.state.actorsData.slice(0,12).map((actor, index) => {
           console.log("actors------", actor);
               return (
-                <ActorList key={index} actorName={actor.name} actorThumb={actor.profile_path} character={actor.character}/>
+                <ActorList key={index} actorName={actor.name} 
+                actorThumb={actor.profile_path} 
+                character={actor.character}
+                />
               );
             })} 
             </AliceCarousel>
+            {/* </Grid> */}
           </div> 
+          
           {/* <YoutubeTrailer /> */}
       </div>
     );

@@ -12,18 +12,23 @@ const MovieInfoSection = (props) =>{
     return(
         <div className="movieinfosection">
             <div className="movieinfosection-content">
-                <div className="twocol">
-                <img src={img}/>
-                <span className="movieinfosection-data">Running time: {ConvertMinToHrMin(props.runTime)}</span>
+                <div className="threecol">
+                <span className="movieinfosection-data">
+                Running time: {ConvertMinToHrMin(props.runTime)}</span>
+                <img className="imgtime" src={img}/>
                 </div>
 
-                <div className="twocol">
-                    
+                <div className="threecol">
                     <p className="imdbtext">IMDB Rating</p>
                     <meter min="0" max="100" optimum="100" low="40" high="70" value={props.imdb_rating * 10}></meter>
                     <p className="ratingcount">{props.imdb_rating}</p>
-                    </div>
                 </div>
+                <div className="threecol">
+                <span className="movieinfosection-data">
+                Release date: {props.releaseDate}</span>
+                </div>
+            </div>
+                
 
             </div>
             

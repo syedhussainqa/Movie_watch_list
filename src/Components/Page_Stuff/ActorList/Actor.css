@@ -1,11 +1,12 @@
 .actor {
     box-sizing: border-box;
+    
   }
   .actor img {
-    width: 40%;
+    width: 100%;
     height: auto;
-    float: left;
     box-sizing: border-box;
+    
   }
   
   .actor-name {

@@ -1,6 +1,7 @@
 .btnaddtolist {
     background: #16d47b;
-    width: 100px;
+    border-radius: 20px;
+    width: 150px;
     height: 50px;
     min-height: 50px;
     text-align: center;
