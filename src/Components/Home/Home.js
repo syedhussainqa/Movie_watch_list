@@ -35,7 +35,7 @@ class Home extends Component {
     this.fetchData(url);
   }
 
-  getMovies = searchStr => {
+  getMovies = (searchStr) => {
     console.log(searchStr);
     //Implementation workflow to search and other one to pull popular movies, see search bar component at the bottom
     let url = "";
@@ -67,15 +67,13 @@ class Home extends Component {
     } else {
       //serching, search url
       url = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${
-        this.state.searchStr
-      }
-              &page=${this.state.currentPage + 1}`;
+              this.state.searchStr}&page=${this.state.currentPage + 1}`;
     }
     this.fetchData(url);
   };
 
   //function just for fetch
-  fetchData = url => {
+  fetchData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -84,7 +82,7 @@ class Home extends Component {
         //   console.log(i)
         // }
         this.setState({
-          //when loading new movie list I want to append to the log list, so first create a copy of the old movie state
+          //when loading new movie list I want to append to the log a list, so first create a copy of the old movie state
           //by using ES6 syntax, ...this.state.movies will make copy of old movie array,
           //...data.results is the new result and 'results' is coming from API check API
           movies: [...this.state.movies, ...data.results],
@@ -106,9 +104,8 @@ class Home extends Component {
           //true do the below
           <div>
             <HomeImage
-              image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${
-                this.state.homeImage.backdrop_path
-              }`}
+            //http://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg
+              image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${this.state.homeImage.backdrop_path}`}
               title={this.state.homeImage.title}
               text={this.state.homeImage.overview}
             />
@@ -120,7 +117,7 @@ class Home extends Component {
         {/***************** Loading Grid Component ***********************/}
         <div className="home-grid">
           <Grid
-            // display header based on if the user is searching or popular movies
+            // display header text based on if the user is searching or popular movies
             header={this.state.searchStr ? "Search Results" : "Popular Movies"}
             loading={this.state.loadingSpinner}
           >

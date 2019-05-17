@@ -10,7 +10,7 @@ class SearchBar extends Component {
 
   timeout = null;
 
-  //function to get search
+  //function to get search result
   getSearchMovies = (ev) => {
     this.setState({
         value: ev.target.value
@@ -20,7 +20,7 @@ class SearchBar extends Component {
     //assign a new time out, will fire every half second
     this.timeout = setTimeout (() => {
         this.props.callback(this.state.value)
-    }, 500);
+    }, 500); //500ms
 
     //when we type something we will clear timer and then the time will restart every half second
   }

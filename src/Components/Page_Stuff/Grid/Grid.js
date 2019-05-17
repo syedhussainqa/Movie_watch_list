@@ -1,7 +1,7 @@
 import React from "react";
 import "./Grid.css";
 
-const Grid = props => {
+const Grid = (props) => {
     //method to render movie thumb nails
     const renderElements = () => {
         //Looping through each child and creating the element on the page, in this case the movie image thumbnail

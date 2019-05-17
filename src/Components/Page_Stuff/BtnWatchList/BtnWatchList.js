@@ -4,9 +4,9 @@ import './BtnWatchList.css'
 
 const BtnWatchList = (props) =>{
     return (
-        <div className="btnwatchlist" onClick={props.onClick} text={props.text}>
-            
-        </div>
+        <button className="btnwatchlist" onClick={props.onClick} text="Watch list">
+            Watch List
+        </button>
     )
 }
 

@@ -6,11 +6,15 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "pure-react-carousel": "^1.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.6.1",
     "react-native-fontawesome": "^6.0.1",
-    "react-scripts": "3.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",
+    "react-youtube": "^7.9.0",
+    "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-alice-carousel": "^1.13.11"
   }
 }

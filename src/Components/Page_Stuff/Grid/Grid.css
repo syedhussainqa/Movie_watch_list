@@ -11,20 +11,13 @@
 }
 
 .grid-element {
-  background: #353535;
+  background: #6e6a6a;
   max-height: 430px;
   animation: animateGrid 0.5s;
   overflow: hidden;
 }
 
-@keyframes animateGrid {
-  from {
-      opacity:0;
-  }
-  to {
-      opacity:1;
-  }
-}
+
 
 @media screen and (max-width: 720px) {
   .grid-content {
