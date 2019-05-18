@@ -1,9 +1,9 @@
 .searchbar {
   width: 100%;
-  height: 105px;
+  height: 90px;
   background: #1c1c1c;
   position: relative;
-  padding: 25px 20px 0px 20px;
+  padding: 15px 20px 0px 20px;
   box-sizing: border-box;
   color: #fff;
 }
@@ -19,13 +19,6 @@
   color: #fff;
 }
 
-.img {
-  position: absolute;
-  left: 20px;
-  top: 12px;
-  color: #fff;
-}
-
 .searchbar-input {
   font-family: 'Abel', sans-serif;
   font-size: 38px;
@@ -36,15 +29,8 @@
   background: transparent;
   height: 40px;
   color: #fff;
+  width: 1000px;
 }
 
-.searchbar-input:focus {
-  outline: none;
-}
 
-@media screen and (max-width: 720px) {
-  .searchbar-input {
-    font-size: 28px;
-    color: #fff;
-  }
-}
+
