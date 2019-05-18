@@ -8,9 +8,9 @@ import MovieInfoSection from "../Page_Stuff/MovieInfoSection/MovieInfoSection";
 import BtnWatchList from "../Page_Stuff/BtnWatchList/BtnWatchList";
 import ShowMoviePath from "../Page_Stuff/ShowMoviePath/ShowMoviePath";
 import MovieList from "../MovieList/MovieList";
-import YoutubeTrailer from "../Page_Stuff/YoutubeTrailer/YoutubeTrailer";
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
 import { timeout } from "q";
 
 /***************** CONSTANTS ***********************/
@@ -100,7 +100,7 @@ class Movie extends Component {
 
   render() {
     return (
-      <div className="movie">
+      <div className="">
         <ShowMoviePath movieName={this.state.title} />
         {/* <Spinner /> */}
         <MovieInfo
@@ -117,9 +117,13 @@ class Movie extends Component {
 
         
         <div className="movie-grid">
-        <AliceCarousel mouseDragEnabled fadeOutAnimation >
-        {/* <Grid> */}
-        {this.state.actorsData.slice(0,12).map((actor, index) => {
+        <Carousel
+        slidesPerPage={5}
+        itemWidth={200}
+        arrows
+        >
+        {/* .slice(0,12) */}
+        {this.state.actorsData.map((actor, index) => {
           console.log("actors------", actor);
               return (
                 <ActorList key={index} actorName={actor.name} 
@@ -128,8 +132,8 @@ class Movie extends Component {
                 />
               );
             })} 
-            </AliceCarousel>
-            {/* </Grid> */}
+            </Carousel>
+
           </div> 
           
           {/* <YoutubeTrailer /> */}
